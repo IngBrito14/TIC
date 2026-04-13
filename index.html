@@ -1,172 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odali | Auditoría & Tecnología</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odali | Portafolio Profesional</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+:root {
+    --primary: #00f7ff;
+    --bg: #0a0f1c;
+    --card: #111827;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #0a0f1c;
-            color: #ffffff;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            padding: 60px 20px;
-            text-align: center;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: #fff;
+}
 
-        header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            color: #00f7ff;
-        }
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: #111827;
+    padding: 15px;
+    text-align: center;
+}
 
-        header p {
-            margin-top: 10px;
-            color: #cfd8dc;
-        }
+nav a {
+    color: var(--primary);
+    margin: 0 12px;
+    text-decoration: none;
+}
 
-        nav {
-            background: #111827;
-            padding: 15px;
-            text-align: center;
-        }
+nav a:hover {
+    color: #fff;
+}
 
-        nav a {
-            color: #00f7ff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
 
-        nav a:hover {
-            color: #ffffff;
-        }
+header h1 {
+    font-family: 'Orbitron';
+    font-size: 2.8rem;
+    color: var(--primary);
+}
 
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+header p {
+    margin-top: 10px;
+    color: #cfd8dc;
+}
 
-        h2 {
-            color: #00f7ff;
-            margin-bottom: 20px;
-        }
+/* SECCIONES */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
 
-        .card {
-            background: #111827;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            background: #1f2937;
-        }
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #00f7ff;
-            color: #000;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid var(--primary);
+    padding-left: 20px;
+}
 
-        .btn:hover {
-            background: #00c4cc;
-        }
-    </style>
+.timeline div {
+    margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ANIMACIÓN */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    color: #94a3b8;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Odali</h1>
-    <p>Auditoría • Seguridad Informática • Inteligencia de Negocios</p>
-</header>
-
 <nav>
     <a href="#about">Sobre mí</a>
-    <a href="#guias">Guías</a>
-    <a href="#investigacion">Investigación</a>
+    <a href="#formacion">Formación</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#proyectos">Proyectos</a>
     <a href="#youtube">YouTube</a>
+    <a href="#contacto">Contacto</a>
 </nav>
 
-<section id="about">
+<header>
+    <h1>Odali</h1>
+    <p>Ingeniero en Sistemas • Auditor TI • Docente Universitario</p>
+</header>
+
+<section id="about" class="hidden">
     <h2>Sobre mí</h2>
     <p>
-        Ingeniero en informática, especialista en auditoría y seguridad de la información.
-        Enfocado en la docencia, investigación y desarrollo de contenido educativo en tecnología.
+        Ingeniero en informática con especialización en auditoría de sistemas, seguridad de la información 
+        e inteligencia de negocios. Docente universitario orientado a la formación práctica en tecnología.
     </p>
 </section>
 
-<section id="guias">
-    <h2>Guías de Estudio</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Auditoría de Sistemas</h3>
-            <p>Procedimientos, riesgos y controles.</p>
+<section id="formacion" class="hidden">
+    <h2>Formación Académica</h2>
+    <div class="timeline">
+        <div>
+            <h3>Maestría en Auditoría y Seguridad Informática</h3>
+            <p>Especialización en control, riesgos y ciberseguridad.</p>
         </div>
-        <div class="card">
-            <h3>Seguridad Informática</h3>
-            <p>Buenas prácticas y normativas.</p>
+        <div>
+            <h3>Maestría en Inteligencia de Negocios (en curso)</h3>
+            <p>Análisis de datos y toma de decisiones.</p>
         </div>
-        <div class="card">
-            <h3>Inteligencia de Negocios</h3>
-            <p>Modelos y análisis de datos.</p>
+        <div>
+            <h3>Ingeniería en Sistemas</h3>
+            <p>Base en desarrollo, redes y gestión tecnológica.</p>
         </div>
     </div>
 </section>
 
-<section id="investigacion">
-    <h2>Investigación</h2>
-    <p>Próximamente publicaré artículos y trabajos académicos relacionados con auditoría y tecnología.</p>
+<section id="experiencia" class="hidden">
+    <h2>Experiencia</h2>
+    <div class="timeline">
+        <div>
+            <h3>Auditor de Sistemas</h3>
+            <p>Evaluación de controles, riesgos y procesos tecnológicos.</p>
+        </div>
+        <div>
+            <h3>Docente Universitario</h3>
+            <p>Impartición de asignaturas de tecnología y auditoría.</p>
+        </div>
+    </div>
 </section>
 
-<section id="youtube">
+<section id="proyectos" class="hidden">
+    <h2>Proyectos</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Modelo de Auditoría TI</h3>
+            <p>Matriz de riesgos y controles.</p>
+        </div>
+        <div class="card">
+            <h3>Sistema de Mantenimiento</h3>
+            <p>Gestión de incidencias y activos.</p>
+        </div>
+        <div class="card">
+            <h3>Dashboard Analítico</h3>
+            <p>Visualización de indicadores.</p>
+        </div>
+    </div>
+</section>
+
+<section id="youtube" class="hidden">
     <h2>Canal de YouTube</h2>
-    <p>Contenido educativo orientado a estudiantes universitarios.</p>
+    <p>Contenido educativo sobre tecnología y auditoría.</p>
 
-    <!-- VIDEO EMBEBIDO -->
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/" 
-        title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="400"
+        src="https://www.youtube.com/embed/TU_VIDEO_ID"
+        frameborder="0" allowfullscreen>
+    </iframe>
+</section>
 
+<section id="contacto" class="hidden">
+    <h2>Contacto</h2>
+    <p>Disponible para asesorías, auditorías y formación.</p>
+
+    <a href="mailto:tuemail@gmail.com" class="btn">Enviar correo</a>
 </section>
 
 <footer>
-    <p>© 2026 Odali | Plataforma Académica</p>
+    <p>© 2026 Odali | Portafolio Profesional</p>
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
